@@ -15,8 +15,8 @@
   ;; If there is more than one, they won't work right.
  '(default ((t (:stipple nil :background "#efebe7" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 135 :width normal :family "misc-fixed")))))
 
-(add-to-list 'load-path
-             "~/.emacs.d/plugins")
+(add-to-list 'load-path 
+						 "~/.emacs.d")
 
 (set-terminal-coding-system 'latin-1)
 (set-keyboard-coding-system 'latin-1)
@@ -33,3 +33,6 @@
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/snippets")
+
+;; rspec-mode
+(require 'rspec-mode)

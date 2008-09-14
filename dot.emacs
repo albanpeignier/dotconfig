@@ -18,6 +18,8 @@
 (add-to-list 'load-path 
 						 "~/.emacs.d")
 
+(server-start)
+
 (set-terminal-coding-system 'latin-1)
 (set-keyboard-coding-system 'latin-1)
 (set-language-environment 'latin-1)

@@ -41,3 +41,5 @@
 
 ;; 'text-mate' mode
 (load "my-textmate")
+
+(add-to-list 'default-frame-alist '(font . "-ttf-monaco-medium-r-normal-regular-0-0-0-0-m-0-iso8859-1"))

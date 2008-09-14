@@ -36,3 +36,6 @@
 
 ;; rspec-mode
 (require 'rspec-mode)
+
+;; 'text-mate' mode
+(load "my-textmate")

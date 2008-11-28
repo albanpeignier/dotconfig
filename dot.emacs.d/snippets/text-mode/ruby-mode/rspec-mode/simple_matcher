@@ -1,0 +1,5 @@
+#name: simple_matcher($description)
+# --
+simple_matcher("${1:description}") do |actual|
+  $0
+end

@@ -1,0 +1,3 @@
+#name: this.$attribute = $attribute
+# --
+this.$1:attribute = $1:attribute;

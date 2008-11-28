@@ -1,19 +1,26 @@
+
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(display-battery-mode nil)
- '(display-time-mode nil)
+ '(autotest-command "nice -19 autotest -f")
  '(global-font-lock-mode t)
- '(show-paren-mode nil)
- '(tab-width 2))
+ '(indent-tabs-mode nil)
+ '(jde-jdk (quote ("1.6.0_07")))
+ '(jde-jdk-registry (quote (("1.6.0_07" . "/usr/lib/jvm/java-6-sun") ("1.5.0_16" . "/usr/lib/jvm/java-1.5.0-sun"))))
+ '(paren-match-face (quote paren-face-match-light))
+ '(paren-sexp-mode t)
+ '(save-place t nil (saveplace))
+ '(scroll-bar-mode nil)
+ '(tab-width 2)
+ '(toggle-mapping-style (quote rspec)))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(default ((t (:stipple nil :background "#efebe7" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 135 :width normal :family "misc-fixed")))))
+ '(default ((t (:stipple nil :background "#efebe7" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 100 :width normal :family "dejavu-dejavu sans mono")))))
 
 (add-to-list 'load-path 
 						 "~/.emacs.d")
@@ -39,7 +46,44 @@
 ;; rspec-mode
 (require 'rspec-mode)
 
+;; autotest
+(require 'autotest)
+
+;; toggle
+(require 'toggle)
+
+(add-hook 'ruby-mode-hook
+ (lambda ()
+ (define-key ruby-mode-map (kbd "C-x t") 'toggle-buffer)))
+
+
 ;; 'text-mate' mode
 (load "my-textmate")
 
-(add-to-list 'default-frame-alist '(font . "-ttf-monaco-medium-r-normal-regular-0-0-0-0-m-0-iso8859-1"))
+;; (add-to-list 'default-frame-alist '(font . "-ttf-monaco-medium-r-normal-regular-0-0-0-0-m-0-iso8859-1"))
+
+;; load ido
+(require 'ido)
+(ido-mode t)
+
+;; Desktop Management
+(desktop-save-mode 1)
+
+;; Twilight Theme
+(require 'color-theme)
+; (color-theme-initialize)
+(load-file "~/.emacs.d/color-theme-twilight.el")
+
+;; Puppet Mode
+(require 'puppet-mode)
+
+;; Midnight
+(require 'midnight)
+
+;; Rcov-mode
+(require 'rcov)
+
+(global-set-key [f1]  'delete-other-windows)
+(global-set-key [\C-f1]     'delete-window)
+(global-set-key [f2]     'split-window-vertically)
+(global-set-key [f3]     'split-window-horizontally)

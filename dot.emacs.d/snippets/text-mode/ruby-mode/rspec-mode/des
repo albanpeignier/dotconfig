@@ -1,5 +1,5 @@
-#name: describe "an object" do ... end
+#name: describe class, "an object" do ... end
 # --
-describe "${1:an object}" do
+describe ${1:class}, "${2:a behaviour}" do
   $0
 end

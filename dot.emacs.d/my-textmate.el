@@ -5,7 +5,7 @@
 (setq lisp-interaction-mode-ignores emacs-lisp-mode-ignores)
 
 (defun switch-to-textmate-mode ()
-  (if (member major-mode '(ruby-mode))
+  (if (member major-mode '(ruby-mode rspec-mode))
       (textmate-mode t)))
 
 (add-hook 'after-change-major-mode-hook 'switch-to-textmate-mode)

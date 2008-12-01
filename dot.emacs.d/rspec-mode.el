@@ -41,7 +41,7 @@
   (save-excursion
     (set-buffer rspec-results)
     (erase-buffer)
-    (setq linkify-regexps '("^\\(/.*\\):\\([0-9]*\\):$")))
+    (setq linkify-regexps '("^\\(/[^:]*\\):\\([0-9]*\\):")))
   (setq proc (apply #'start-process "rspec" rspec-results (spec-command) (buffer-file-name) args))
   (set-process-filter proc 'linkify-filter)
   (display-buffer rspec-results))

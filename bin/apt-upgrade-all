@@ -1,0 +1,15 @@
+#!/bin/sh
+
+case $1 in
+  --domain=*)
+    hosts_domain=".`echo $1 | cut -d= -f2`"
+    shift
+  ;;
+esac
+
+hosts=$@
+
+for host in $hosts; do
+  echo "Connecting to $host :"
+  ssh -t $host$hosts_domain /usr/local/sbin/apt-upgrade
+done

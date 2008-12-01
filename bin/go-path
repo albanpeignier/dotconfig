@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+
+require 'uri'
+
+if ARGV.empty?
+  exit 1
+end
+
+def load_gtk_bookmarks()
+  gtk_bookmarks = {}
+
+  File.open("#{ENV['HOME']}/.gtk-bookmarks").each do |line|
+    uri, name = line.split(' ')
+    uri = URI.parse(uri)
+
+    unless name
+      name = uri.path.split('/').last
+    end
+
+    gtk_bookmarks[name.to_sym] = uri
+  end
+
+  gtk_bookmarks
+end
+
+unless ARGV[0] == "--all"
+  target=ARGV[0].to_sym
+
+  target_url=load_gtk_bookmarks[target]
+
+  if target_url and target_url.scheme == "file"
+    puts target_url.path
+  else
+    exit 1
+  end
+else
+  puts load_gtk_bookmarks.keys
+end

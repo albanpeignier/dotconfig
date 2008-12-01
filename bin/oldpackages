@@ -1,0 +1,18 @@
+#!/usr/bin/python
+
+# Displays packages that are installed but don't exist in the system's apt repositories.
+# Useful for finding old packages that have been removed from the distributon.
+
+import commands
+import sets
+
+available_packages = commands.getoutput('cat /var/lib/apt/lists/*_Packages | grep "Package:" | cut -d \' \' -f 2').split('\n')
+available_packages = sets.Set(available_packages)
+
+installed_packages = commands.getoutput('dpkg -l | grep "^ii" |cut -d " " -f 3').split('\n')
+installed_packages = sets.Set(installed_packages)
+
+result = installed_packages - available_packages
+
+for package in result:
+    print package

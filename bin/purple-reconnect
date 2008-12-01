@@ -1,0 +1,3 @@
+#!/bin/sh
+purple-remote "setstatus?status=offline"
+purple-remote "setstatus?status=available"

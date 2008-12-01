@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+files=""
+
+while [ $# -gt 1 ]; do
+    files="$files $1"
+    shift
+done
+
+destination=$1
+
+for file in $files; do
+    mv "$file" "$destination"
+    ln -s $destination/$file $file
+done

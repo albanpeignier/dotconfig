@@ -1,0 +1,16 @@
+function go_impl() {
+  target_name=$1
+  target=`go-path $target_name`
+
+  if [ -d "$target" ]; then
+    cd $target
+  else
+    echo "target not found : $target_name" 2>&1
+  fi
+}
+
+
+alias go='go_impl'
+
+function go_targets { reply=(`go-path --all`); }
+compctl -K go_targets go

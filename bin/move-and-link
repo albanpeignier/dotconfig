@@ -1,5 +1,14 @@
 #!/bin/sh -e
 
+# Move the given files and replace them by a link to the new location
+#
+# Usage :
+#   move-and-link file1 [file2 ...] target
+#
+# Examples:
+#   move-and-link wordpress wordpress-2.6.3
+#   move-and-link mongrel go ~/.myconfig/bin/
+
 files=""
 
 while [ $# -gt 1 ]; do
@@ -11,5 +20,9 @@ destination=$1
 
 for file in $files; do
     mv "$file" "$destination"
-    ln -s $destination/$file $file
+    if [  -d "$destination" ];
+        ln -s $destination/$file $file
+    else
+        ln -s $destination $file        
+    fi
 done

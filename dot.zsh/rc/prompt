@@ -3,6 +3,8 @@ if [ -z "$NO_COLORS" ]; then
 	colors
 fi
 
+setopt prompt_subst
+
 if [[ $TERM != "dumb" ]]; then
 SHORT_HOST=`hostname | sed 's/\([a-z_]*\)\..*/\1/'`
 
@@ -11,7 +13,7 @@ if [ -z "$NO_COLORS" ]; then
 	path_color="lightgray"
 
 	host="%{$fg[$host_color]%}$SHORT_HOST"
-	cpath="%B%{$fg[$path_color]%}%20<..<%~%b"
+	cpath="%B%{$fg[$path_color]%}%25<..<%~%b"
 
 	#host="$SHORT_HOST"
 	#cpath="%B%{$terminfo[bold]%}%20<..<%~%b"
@@ -21,11 +23,16 @@ if [ -z "$NO_COLORS" ]; then
 	unset host_color path_color
 else 
 	host="$SHORT_HOST"
-	cpath="%20<..<%~"
+	cpath="%25<..<%~"
 	end=
 fi
 
-PS1="[$host:${cpath}$end] "		
+git_prompt_info() {
+  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+  echo "(${ref#refs/heads/})"
+}
+
+PROMPT='[$host:${cpath}$(git_prompt_info)$end] '
 fi
 
 

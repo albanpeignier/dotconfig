@@ -1,3 +1,9 @@
+# Define alias go
+#
+# Require: bin/go-path script
+#
+# See http://blog.tryphon.org/alban/archives/2007/11/28/go-to-gtk-bookmarks-in-your-shell/
+
 function go_impl() {
   target_name=$1
   target=`go-path $target_name`

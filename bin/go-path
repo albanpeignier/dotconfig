@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+# Used by go shell function
+# 
+# See http://blog.tryphon.org/alban/archives/2007/11/28/go-to-gtk-bookmarks-in-your-shell/
+
 require 'uri'
 
 if ARGV.empty?

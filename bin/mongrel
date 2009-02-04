@@ -1,5 +1,12 @@
 #!/bin/sh -x
 
+# Start/stop/restart your mongrel development instance.
+#
+# Examples:
+#  mongrel restart
+#  mongrel stop
+#  mongrel start
+
 function start() {
     mongrel_rails start --address 127.0.0.1 &
     echo $! > mongrel.pid

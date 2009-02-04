@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# Upload your ssh key to a remote server (create needed directory if needed, set the proper permissions)
+# 
+# Examples:
+#   ssh-send remotehost [remoteuser]
+
 REMOTE_HOST=$1
 REMOTE_USER=$USER
 

@@ -1,4 +1,6 @@
 #!/bin/sh
 
+# Upgrade your debian system in one command
+
 aptcmd=/usr/bin/apt-get
 sudo sh -c "$aptcmd update && $aptcmd dist-upgrade && $aptcmd autoremove && $aptcmd clean"

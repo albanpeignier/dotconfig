@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# Shortcut for 'sudo /etc/init.d/...' command
+#
+# Examples:
+#   initd apache2 # reload apache2
+#   initd bind9 stop # stop bind
+
 daemon=$1
 shift
 

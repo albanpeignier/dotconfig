@@ -1,5 +1,12 @@
 #!/bin/sh
 
+# Upgrade a given list of debian servers
+#
+# Require: apt-upgrade
+#
+# Examples : 
+#  apt-upgrade-all --domain=yourdomain.priv server1 server2 server3
+
 case $1 in
   --domain=*)
     hosts_domain=".`echo $1 | cut -d= -f2`"

@@ -20,7 +20,7 @@ destination=$1
 
 for file in $files; do
     mv "$file" "$destination"
-    if [  -d "$destination" ];
+    if [  -d "$destination" ]; then
         ln -s $destination/$file $file
     else
         ln -s $destination $file        

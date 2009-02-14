@@ -1,7 +1,7 @@
 emacs_bin="/usr/bin/emacs-snapshot-gtk"
 
 if [ -x "$emacs_bin" ]; then
-	export EDITOR="$emacs_bin"
+  export EDITOR="emacsclient.emacs-snapshot"
 	alias emacs="$emacs_bin"
 	alias suemacs="sudo $emacs_bin"
   alias e="emacsclient.emacs-snapshot -n"

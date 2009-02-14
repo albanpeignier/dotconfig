@@ -1,0 +1,85 @@
+#!/bin/bash
+
+# Resize a lvm logical volume with ext2/3 filesystem
+#
+# Steps :
+#
+# - ask confirmation
+# - umount (if needed) 
+# - lvextend
+# - e2fsck 
+# - resize2fs
+# - mount (if needed)
+#
+# Use --dry-run to see step details
+
+if [ $# -lt 2 ]; then
+    cat - <<EOF
+Usage: $0 [--dry-run] <lv name> <added size> 
+
+Example:
+  $0 home 10G 
+    will add 10G to the logival volume home
+EOF
+    exit 1
+fi
+
+function execute {
+    echo $*
+    $*
+}
+
+if [ "$1" == "--dry-run" ]; then
+    function execute {
+        echo "dry run: $*"
+    }
+    shift
+fi
+
+
+lv_name=$1
+added_size=$2
+
+# TODO: add an command line to specify the volume group
+vg_name=`vgs --noheadings -o vg_name | head -1 | awk '{ print $1 }'`
+
+lv_device="/dev/mapper/$vg_name-$lv_name"
+
+if [ ! -b "$lv_device" ]; then
+    echo "Can't find $lv_device"
+    exit 1
+fi
+
+# try to find mount point
+# TODO: ? add an command line to specify the mount point
+lv_mount_point=`mount | grep "^$lv_device on" | awk '{ print $3 }'`
+
+mount_text="mount on $lv_mount_point"
+if [ -z "$lv_mount_point" ]; then
+    echo "Warning: can't find mount point of $lv_device"
+    mount_text = "not mount"
+fi
+
+read -p "Confirm you want $added_size to $lv_device ($mount_text) ? (y/N) " input
+
+if [ "$input" != 'y' ]; then
+  echo "Extend canceled"
+  exit 1
+fi
+
+if [ -n "$lv_mount_point" ]; then
+    execute umount $lv_mount_point
+
+    if [ $? != 0 ]; then
+        echo "Can't umount '$lv_mount_point', used by :"
+        echo "searching with lsof, please wait ..."
+        lsof | grep $lv_mount_point
+        exit 1
+    fi
+fi
+
+set -e
+execute lvextend -L +$added_size $lv_device
+execute e2fsck -f $lv_device
+execute resize2fs $lv_device
+[ -n "$lv_mount_point" ] && execute mount $lv_mount_point

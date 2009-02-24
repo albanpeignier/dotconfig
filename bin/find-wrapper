@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Simple wrapper around find to make quick searchs
+#
+# Find in subdirectories any file with specified strings in its name
+# 
+# Examples:
+#
+# $ f email notifier
+# ./lib/builder_plugins/email_notifier.rb
+# ./test/unit/plugins/email_notifier_test.rb
+
+
+# join arguments with wildcards
+# transform "email notifier" into "*email*notifier*"
+expected_name="*`echo $* | sed 's/ /*/g'`*"
+
+find -iwholename "$expected_name"
+

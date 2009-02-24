@@ -1,0 +1,7 @@
+( if 
+( contains ( application_name ) "emacs" )
+( begin 
+( maximize )
+( set_workspace 4 )
+)
+)

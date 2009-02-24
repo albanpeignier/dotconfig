@@ -1,0 +1,7 @@
+(if
+(is (application_name) "xchat")
+(begin
+(set_viewport 2)
+(pin)
+)
+)

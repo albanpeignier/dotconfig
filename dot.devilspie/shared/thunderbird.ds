@@ -1,0 +1,7 @@
+; generated_rule thunderbird
+( if
+( is ( application_name ) "Mozilla-Thunderbird" )
+( begin
+( set_workspace 2 )
+)
+)

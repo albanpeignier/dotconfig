@@ -1,0 +1,7 @@
+(if
+(is (application_name) "Gossip")
+(begin
+(set_workspace 1)
+(unpin)
+)
+)

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+mode=$1
+
+case $mode in
+    single)
+        xrandr --output VGA --off
+        devilspie-mode single
+        ;;
+    dual)
+        gconftool-2 --type int --set /apps/panel/toplevels/top_panel/monitor 1
+        xrandr --output LVDS --auto --output VGA --auto --right-of LVDS
+        devilspie-mode dual
+        ;;
+    *)
+        echo "Unsupported display mode: '$mode'"
+        exit 1
+esac

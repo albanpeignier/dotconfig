@@ -1,0 +1,7 @@
+(if
+(is (window_name) "Campfire: Agilis")
+(begin
+(set_viewport 2)
+(pin)
+)
+)

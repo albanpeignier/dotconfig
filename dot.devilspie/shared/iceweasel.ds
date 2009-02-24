@@ -1,0 +1,6 @@
+(if
+(contains (application_name) "Iceweasel")
+(begin
+(set_workspace 3)
+)
+)

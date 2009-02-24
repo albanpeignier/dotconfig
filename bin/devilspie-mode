@@ -1,0 +1,23 @@
+#!/bin/sh
+
+mode=$1
+
+if [ -z "$mode" ]; then
+    echo "No specified mode"
+    exit 1
+fi
+
+devilspie_dir=~/.devilspie
+mode_dir=$devilspie_dir/$mode
+
+if [ ! -d "$mode_dir" ]; then
+    echo "Unknown devilspie mode"
+    exit 1
+fi
+
+# make sure shared files are linked in this mode
+ln -fs $devilspie_dir/shared/*.ds $mode_dir
+
+pkill ^devilspie$
+devilspie -a $mode_dir/*.ds &
+

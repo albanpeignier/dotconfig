@@ -4,6 +4,7 @@ mode=$1
 
 case $mode in
     single)
+        gconftool-2 --type int --set /apps/panel/toplevels/top_panel/monitor 0
         xrandr --output VGA --off
         devilspie-mode single
         ;;

@@ -36,7 +36,7 @@ PROMPT='[$host:${cpath}$(git_prompt_info)$end] '
 fi
 
 
-if [[ -n $TERM && ( $TERM = "xterm" || $TERM = "rxvt" )  ]]; then
+if [[ -n $TERM && ( $TERM = "xterm" || $TERM = "rxvt-unicode" )  ]]; then
   _titlebar () { echo -ne "\033]2;$*\007" }
 
   chpwd () { _titlebar "$USER@$SHORT_HOST:$PWD" }

@@ -73,6 +73,7 @@
 (require 'color-theme)
 ; (color-theme-initialize)
 (load-file "~/.emacs.d/color-theme-twilight.el")
+(color-theme-twilight)
 
 ;; Puppet Mode
 (require 'puppet-mode)
@@ -87,3 +88,8 @@
 (global-set-key [\C-f1]     'delete-window)
 (global-set-key [f2]     'split-window-vertically)
 (global-set-key [f3]     'split-window-horizontally)
+
+;; emacs-rails
+;(add-to-list 'load-path 
+;						 "~/.emacs.d/rails")
+;(require 'rails)

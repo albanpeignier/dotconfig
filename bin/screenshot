@@ -1,0 +1,3 @@
+#!/bin/sh
+scrot '/tmp/%Y-%m-%d_$wx$h.png' --exec 'gimp $f' --select
+

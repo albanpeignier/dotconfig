@@ -1,0 +1,10 @@
+[3.3]
+libraryPath=/usr/lib/kde3/plugins/styles:/usr/lib/kde3/plugins:/usr/lib/kde3:/usr/lib/qt3/plugins:/usr/bin
+
+[General]
+style=qtc_klearlooks
+
+[Palette]
+active=#000000^e#efebe7^e#ffffff^e#f7f5f3^e#9a8d7f^e#9f9c99^e#000000^e#ffffff^e#000000^e#ffffff^e#efebe7^e#000000^e#000000^e#ffffff^e#0000ff^e#ff00ff^e
+disabled=#808080^e#efebe7^e#ececec^e#ffffff^e#777573^e#9f9c99^e#808080^e#ffffff^e#808080^e#ffffff^e#efebe7^e#000000^e#808080^e#ffffff^e#0000ff^e#ff00ff^e
+inactive=#000000^e#efebe7^e#ffffff^e#f7f5f3^e#9a8d7f^e#9f9c99^e#000000^e#ffffff^e#000000^e#ffffff^e#efebe7^e#000000^e#000000^e#ffffff^e#0000ff^e#ff00ff^e

@@ -8,7 +8,7 @@
 #  mongrel start
 
 function start() {
-    mongrel_rails start --address 127.0.0.1 &
+    mongrel_rails start &
     echo $! > mongrel.pid
 }
 

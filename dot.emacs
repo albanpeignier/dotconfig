@@ -93,3 +93,32 @@
 ;(add-to-list 'load-path 
 ;						 "~/.emacs.d/rails")
 ;(require 'rails)
+
+(require 'git)
+
+;; Disable toolbar and menu
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+
+;; Configure spell .. use ispell-buffer
+(require 'ispell)
+
+;; Change font size
+
+(defun font-size-increase ()
+  (interactive)
+  (set-face-attribute 'default
+                      nil
+                      :height
+                      (ceiling (* 1.10
+                                  (face-attribute 'default :height)))))
+(defun font-size-decrease ()
+  (interactive)
+  (set-face-attribute 'default
+                      nil
+                      :height
+                      (floor (* 0.9
+                                  (face-attribute 'default :height)))))
+
+(global-set-key (kbd "C-+") 'font-size-increase)
+(global-set-key (kbd "C-=") 'font-size-decrease)

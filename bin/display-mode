@@ -9,7 +9,7 @@ case $mode in
         devilspie-mode single
         ;;
     dual)
-        gconftool-2 --type int --set /apps/panel/toplevels/top_panel/monitor 1
+        gconftool-2 --type int --set /apps/panel/toplevels/top_panel/monitor 0
         xrandr --output LVDS --auto --output VGA --auto --right-of LVDS
         devilspie-mode dual
         ;;

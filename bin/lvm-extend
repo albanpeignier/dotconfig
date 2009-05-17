@@ -41,7 +41,7 @@ lv_name=$1
 added_size=$2
 
 # TODO: add an command line to specify the volume group
-vg_name=`vgs --noheadings -o vg_name | head -1 | awk '{ print $1 }'`
+vg_name=`vgs --noheadings -o vg_name | head -1 | awk '{ print $1 }' | sed 's/-/--/g'`
 
 lv_device="/dev/mapper/$vg_name-$lv_name"
 

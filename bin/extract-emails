@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+emails = []
+
+File.open(ARGV.first,'r') do |file|
+  while line = file.gets
+    match_data = line.match(/[^@:\s]{2,}@(?:[-a-z0-9]+\.)+[a-z]{2,}/i)
+    emails << match_data.to_s.downcase if match_data
+  end
+end
+
+puts emails

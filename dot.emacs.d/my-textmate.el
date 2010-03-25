@@ -4,9 +4,9 @@
       '(?\'))
 (setq lisp-interaction-mode-ignores emacs-lisp-mode-ignores)
 
-(defun switch-to-textmate-mode ()
+(defun switch-to-textmate-pair-mode ()
   (if (member major-mode '(ruby-mode rspec-mode))
-      (textmate-mode t)))
+      (textmate-pair-mode t)))
 
-(add-hook 'after-change-major-mode-hook 'switch-to-textmate-mode)
-(add-hook 'ruby-mode-hook 'switch-to-textmate-mode)
+(add-hook 'after-change-major-mode-hook 'switch-to-textmate-pair-mode)
+(add-hook 'ruby-mode-hook 'switch-to-textmate-pair-mode)

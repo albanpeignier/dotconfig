@@ -23,7 +23,7 @@
 ;;
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(define-minor-mode textmate-mode
+(define-minor-mode textmate-pair-mode
        "Toggle Textmate mode.
      With no argument, this command toggles the mode.
      Non-null prefix argument turns on the mode.

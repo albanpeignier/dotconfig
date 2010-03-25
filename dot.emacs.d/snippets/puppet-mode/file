@@ -1,0 +1,5 @@
+#name: file 
+# --
+file { "/${2:directory}/${1:name}":
+  source => "puppet:///${3:source}/${1:name}",
+}

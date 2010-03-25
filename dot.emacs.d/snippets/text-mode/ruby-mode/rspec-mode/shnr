@@ -1,0 +1,3 @@
+#name: should_not_receive(:$message)
+# --
+should_not_receive(:${1:message})$0

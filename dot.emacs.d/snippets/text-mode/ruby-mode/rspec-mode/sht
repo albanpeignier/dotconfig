@@ -1,0 +1,3 @@
+#name: response.should have("$tag")
+# --
+response.should have_tag("${0:tag}")

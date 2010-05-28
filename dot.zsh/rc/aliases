@@ -14,3 +14,6 @@ alias f='~/share/bin/find-wrapper'
 
 alias mute='amixer -q sset Master playback mute'
 alias unmute='amixer -q sset Master playback unmute'
+
+alias b='/usr/bin/google-chrome'
+alias browser='/usr/bin/google-chrome'

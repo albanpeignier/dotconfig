@@ -1,0 +1,8 @@
+setopt extended_glob
+
+if [[ "$TERM" == "screen" ]]; then
+    preexec () {
+	      local CMD=${1[(wr)^(*=*|sudo|-*)]}
+	      echo -ne "\ek$USER@$SHORT_HOST:$PWD $CMD\e\\"
+    }
+fi

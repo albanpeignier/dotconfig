@@ -1,0 +1,33 @@
+if [ -z "$NO_COLORS" ]; then
+	alias ls='command ls --color'
+fi
+
+alias ll='ls -l'
+alias lrt='ls -rt'
+alias h='history'
+alias myps='ps -u $USER'
+alias n='nautilus'
+alias ifconfig='/sbin/ifconfig'
+alias iwconfig='/sbin/iwconfig'
+alias g='ack-grep --type-add ruby=.erb'
+alias f='~/share/bin/find-wrapper'
+
+alias mute='amixer -q sset Master playback mute'
+alias unmute='amixer -q sset Master playback unmute'
+
+alias b='$BROWSER'
+alias browser='$BROWSER'
+
+alias rake='bundle-exec rake'
+alias cap='bundle-exec cap'
+alias rspec='bundle-exec rspec'
+alias rails='bundle-exec rails'
+alias cucumber='bundle-exec cucumber'
+alias irb='bundle-exec irb'
+alias rspec-backtrace='bundle-exec rspec --backtrace'
+alias guard='bundle-exec guard'
+alias jenkyll='bundle-exec jenkyll'
+alias box='bundle-exec box'
+alias dandelion='bundle-exec dandelion'
+
+alias dc=docker-compose

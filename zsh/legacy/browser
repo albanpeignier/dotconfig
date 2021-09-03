@@ -1,0 +1,3 @@
+#BROWSER='firefox-trunk'
+BROWSER='google-chrome'
+export BROWSER

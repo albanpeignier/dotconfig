@@ -1,0 +1,12 @@
+emacs_bin="/usr/bin/emacs-snapshot-x"
+
+if [ -x "$emacs_bin" ]; then
+  export EDITOR="emacsclient.emacs-snapshot"
+	alias emacs="$emacs_bin"
+	alias suemacs="sudo $emacs_bin"
+  alias e="~/share/bin/emacs-open"
+fi
+
+unset emacs_bin
+
+export SGML_CATALOG_FILES=/etc/xml/catalog

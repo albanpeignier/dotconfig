@@ -1,0 +1,50 @@
+if [ -z "$NO_COLORS" ]; then
+	autoload -U colors
+	colors
+fi
+
+setopt prompt_subst
+
+if [[ $TERM != "dumb" ]]; then
+SHORT_HOST=`hostname | sed 's/\([a-z_]*\)\..*/\1/'`
+
+if [ -z "$NO_COLORS" ]; then
+	host_color="white"
+	path_color="lightgray"
+
+	host="%{$fg[$host_color]%}$SHORT_HOST"
+	cpath="%B%{$fg[$path_color]%}%25<..<%~%b"
+
+	#host="$SHORT_HOST"
+	#cpath="%B%{$terminfo[bold]%}%20<..<%~%b"
+
+	end="%{$reset_color%}"
+
+	unset host_color path_color
+else 
+	host="$SHORT_HOST"
+	cpath="%25<..<%~"
+	end=
+fi
+
+git_prompt_info() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo "(${ref#refs/heads/})"
+}
+
+PROMPT='[$host:${cpath}$(git_prompt_info)$end] '
+fi
+
+
+if [[ -n $TERM && ( $TERM = "xterm" || $TERM = "rxvt-unicode" )  ]]; then
+  _titlebar () { echo -ne "\033]2;$*\007" }
+elif [[ -n $TERM && ( $TERM = "screen" )  ]]; then
+  _titlebar () { echo -ne "\033k$*\033\134" }
+else
+  _titlebar () { }
+fi
+
+chpwd () { _titlebar "$USER@$SHORT_HOST:$PWD" }
+chpwd
+
+unset host_color path_color end

@@ -1,0 +1,6 @@
+if [ -x /usr/bin/git ]; then
+   alias gst="git status"
+   alias gc="git commit -v"
+   alias gd="git diff"
+   alias glast="git log -1"
+fi

@@ -1,0 +1,11 @@
+# escape ^Bb
+startup_message off
+# caption always
+
+defscrollback 5000
+
+bind > eval writebuf "exec sh -c 'xsel -nbi < ~/.screen-exchange'"
+bind y eval "exec sh -c 'xsel -bo > ~/.screen-exchange'"
+
+# termcapinfo xterm|xterms|xs|rxvt ti@:te@
+term screen-256color

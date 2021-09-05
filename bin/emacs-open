@@ -1,0 +1,10 @@
+#!/bin/sh
+
+file=`echo $1 | cut -d: -f1`
+line=`echo $1 | cut -d: -f2`
+
+if [ "$line" != "$file" ]; then
+    options="+$line"
+fi
+
+exec emacsclient.emacs-snapshot -n $options "$file"

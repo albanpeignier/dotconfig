@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+TRANSIT_FEED_DIRECTORY=${TRANSIT_FEED_DIRECTORY:-vendor/transitfeed}
+
+if [ ! -d $TRANSIT_FEED_DIRECTORY ]; then
+    git clone https://github.com/google/transitfeed.git $TRANSIT_FEED_DIRECTORY
+fi
+
+exec python2.7 "$TRANSIT_FEED_DIRECTORY/feedvalidator_googletransit.py" $@

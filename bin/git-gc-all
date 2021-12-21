@@ -1,0 +1,2 @@
+#!/bin/sh
+find ~  -xdev -type d -name ".git" -print0 | xargs -0 -i --verbose git --git-dir={} gc

@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+URL='https://api.github.com/repos/bootandy/dust/releases/latest'
+VERSION=$(curl -s $URL | jq -r .tag_name)
+RELEASE="https://github.com/bootandy/dust/releases/download/${VERSION}/dust-${VERSION}-x86_64-unknown-linux-musl.tar.gz"
+
+curl -sLf ${RELEASE} | tar --extract -z --to-stdout "dust-${VERSION}-x86_64-unknown-linux-musl/dust" > /tmp/dust
+local-install /tmp/dust

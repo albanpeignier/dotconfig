@@ -18,4 +18,10 @@ Homepage: https://starship.rs/
 
 Homepage: https://github.com/cantino/mcfly
 
+## Bat
 
+Homepage: https://github.com/sharkdp/bat
+
+## Dust
+
+Homepage: https://github.com/bootandy/dust

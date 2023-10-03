@@ -1,0 +1,1 @@
+PROJECT_PATHS=(~/Projects)

@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+URL='https://api.github.com/repos/cantino/mcfly/releases/latest'
+VERSION=$(curl -s $URL | jq -r .tag_name)
+RELEASE="https://github.com/cantino/mcfly/releases/download/${VERSION}/mcfly-${VERSION}-x86_64-unknown-linux-musl.tar.gz"
+
+curl -sLf ${RELEASE} | tar --extract -z --to-stdout mcfly > /tmp/mcfly
+local-install /tmp/mcfly

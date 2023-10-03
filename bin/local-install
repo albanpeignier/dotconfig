@@ -1,0 +1,9 @@
+#!/bin/sh
+
+TARGET="/usr/local/bin/$(basename $1)"
+echo "Install $1 into ${TARGET}"
+
+sudo sh -c "cp $1 ${TARGET} && chmod +x ${TARGET}"
+rm $1
+
+

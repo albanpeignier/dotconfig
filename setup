@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+PACKAGES="screen kitty bat zsh curl jq"
+sudo apt install $PACKAGES
+
+./bin/dust-install
+./bin/mcfly-install
+./bin/starship-install

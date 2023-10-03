@@ -14,7 +14,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 Homepage: https://starship.rs/
 
-```
-curl -sS https://starship.rs/install.sh | sh
-```
+## Mc Fly
+
+Homepage: https://github.com/cantino/mcfly
+
 

@@ -1,0 +1,7 @@
+
+#!/bin/sh -e
+
+RELEASE="https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-musl.tar.gz"
+curl -sLf ${RELEASE} | tar --extract -z --to-stdout starship > /tmp/starship
+local-install /tmp/starship
+

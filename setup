@@ -1,7 +1,28 @@
 #!/bin/sh -e
 
-PACKAGES="screen kitty bat zsh curl jq"
+PACKAGES="screen kitty bat zsh curl jq fonts-powerline"
 sudo apt install $PACKAGES
+
+./bin/ohmyzsh-install
+
+ln -fs ~/.dotconfig/zsh/zshrc ~/.zshrc
+mkdir -p ~/.zsh
+
+ln -fs ~/.dotconfig/screen/screenrc ~/.screenrc
+if [ ! -L ~/.bin ]; then
+  ln -fs ~/.dotconfig/bin ~/.bin
+fi
+
+ln -fs ~/.dotconfig/git/config ~/.gitconfig
+# ln -fs ~/.dotconfig/ruby/irbrc ~/.irbrc
+
+if [ ! -L ~/.config/kitty ]; then
+  ln -fs ~/.dotconfig/kitty ~/.config/kitty
+fi
+ln -fs ~/.dotconfig/starship.toml ~/.config/starship.toml
+
+
+PATH="./bin:$PATH"
 
 ./bin/dust-install
 ./bin/mcfly-install

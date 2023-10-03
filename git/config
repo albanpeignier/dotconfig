@@ -1,13 +1,11 @@
 [user]
         name = Alban Peignier
-[giggle]
-        compact-mode = false
-        main-window-maximized = true
-        main-window-geometry = 0x0+0+0
 [push]
         default = current
 [color]
         ui = true
 [core]
-#        autocrlf = input
         excludesFile = ~/.dotconfig/git/ignore
+        hooksPath = ~/.dotconfig/git/hooks
+[fetch]
+	prune = true

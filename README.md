@@ -36,3 +36,7 @@ Homepage: https://github.com/doomemacs/doomemacs
 ## i3
 
 Homepage: https://i3wm.org/
+
+## Polybar
+
+Homepage: https://github.com/polybar/polybar

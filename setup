@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-PACKAGES="screen kitty bat zsh curl jq htop btop fonts-powerline fonts-ubuntu fonts-ubuntu-console"
+PACKAGES="screen kitty bat zsh curl jq htop btop fonts-powerline fonts-ubuntu fonts-ubuntu-console fonts-font-awesome"
 sudo apt install $PACKAGES
 
 ./bin/ohmyzsh-install

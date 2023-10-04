@@ -1,14 +1,17 @@
 
 
+# Setup
+
+```
+sudo apt install git
+git clone git@github.com:albanpeignier/dotconfig.git .dotconfig
+```
+
 # Dependencies
 
 ## Oh My ZSH
 
 Homepage: https://ohmyz.sh/
-
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
 
 ## Starship
 

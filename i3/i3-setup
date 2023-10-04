@@ -1,10 +1,16 @@
 #!/bin/sh -e
 
-PACKAGES="i3 picom playerctl feh variety adwaita-icon-theme polybar"
+PACKAGES="i3 picom playerctl feh variety adwaita-icon-theme polybar lxappearance"
 sudo apt install $PACKAGES
+
+I3_CONFIG="~/.dotconfig/i3/config-$(hostname)"
+if [ -f ${I3_CONFIG} ]; then
+  ln -fs  ${I3_CONFIG} ~/.config/i3/config
+fi
 
 # Setup files create with LxAppareance
 ln -fs ~/.dotconfig/i3/gtk/gtkrc ~/.gtkrc-2.0
+ln -fs ~/.dotconfig/i3/gtk/settings.ini ~/.config/gtk-3.0/settings.ini
 
 mkdir -p ~/.icons/default
 ln -fs ~/.dotconfig/i3/gtk/icons.theme ~/.icons/default/index.theme
@@ -14,4 +20,7 @@ xrdb ~/.Xresources
 
 # Polybar
 mkdir -p ~/.config/polybar
-ln -fs ~/.dotconfig/i3/polybar.ini ~/.config/polybar/config.ini
+POLYBAR_CONFIG="~/.dotconfig/i3/polybar-$(hostname).ini"
+if [ -f ${POLYBAR_CONFIG} ]; then
+  ln -fs ${POLYBAR_CONFIG} ~/.config/polybar/config.ini
+fi

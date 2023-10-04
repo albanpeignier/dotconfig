@@ -1,4 +1,12 @@
 #!/bin/sh -e
 
-PACKAGES="i3 picom playerctl feh variety"
+PACKAGES="i3 picom playerctl feh variety adwaita-icon-theme"
 sudo apt install $PACKAGES
+
+# Setup files create with LxAppareance
+ln -fs ~/.dotconfig/i3/gtk/gtkrc ~/.gtkrc-2.0
+mkdir -p ~/.icons/default
+ln -fs ~/.dotconfig/i3/gtk/icons.theme ~/.icons/default/index.theme
+
+ln -fs ~/.dotconfig/i3/Xresources ~/.Xresources
+xrdb ~/.Xresources

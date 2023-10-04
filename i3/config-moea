@@ -14,4 +14,3 @@ set $ws10 "10"
 font pango:Ubuntu Mono 11
 
 include ~/.dotconfig/i3/config.d/*.conf
-

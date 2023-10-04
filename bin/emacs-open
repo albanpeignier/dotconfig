@@ -7,4 +7,4 @@ if [ "$line" != "$file" ]; then
     options="+$line"
 fi
 
-exec emacsclient.emacs-snapshot -n $options "$file"
+exec emacsclient -n $options "$file"

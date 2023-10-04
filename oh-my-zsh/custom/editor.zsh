@@ -1,4 +1,5 @@
-# export EDITOR="emacsclient.emacs-snapshot"
-# alias e="~/.bin/emacs-open"
+alias e="~/.bin/emacs-open"
+export EDITOR="emacsclient"
 
-export EDITOR="code --wait"
+# alias e="code -g"
+# export EDITOR="code --wait"

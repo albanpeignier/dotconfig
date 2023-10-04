@@ -40,3 +40,7 @@ Homepage: https://i3wm.org/
 ## Polybar
 
 Homepage: https://github.com/polybar/polybar
+
+## Picom
+
+Homepage: https://github.com/yshui/picom

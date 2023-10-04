@@ -1,4 +1,4 @@
 #!/bin/sh -e
 
-PACKAGES="i3 picom playerctl feh variety fonts-ubuntu-console"
+PACKAGES="i3 picom playerctl feh variety"
 sudo apt install $PACKAGES

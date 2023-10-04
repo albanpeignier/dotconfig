@@ -24,7 +24,9 @@ if [ -f ${I3_CONFIG} ]; then
   ln -fs  ${I3_CONFIG} ~/.config/i3/config
 fi
 
-ln -fs ~/.dotconfig/doom-emacs ~/.doom.d
+if [ ! -L ~/.doom.d ]; then
+  ln -fs ~/.dotconfig/doom-emacs ~/.doom.d
+fi
 
 PATH="./bin:$PATH"
 

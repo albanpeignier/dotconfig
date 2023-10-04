@@ -32,3 +32,7 @@ Homepage: https://github.com/bootandy/dust
 ## Doom Emacs
 
 Homepage: https://github.com/doomemacs/doomemacs
+
+## i3
+
+Homepage: https://i3wm.org/

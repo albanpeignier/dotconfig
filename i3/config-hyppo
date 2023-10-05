@@ -22,7 +22,4 @@ set $ws10 "10"
 
 font pango:Ubuntu Mono 11
 
-# Usefull ??
-exec --no-startup-id variety
-
 include ~/.dotconfig/i3/config.d/*.conf

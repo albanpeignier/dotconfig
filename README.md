@@ -44,3 +44,7 @@ Homepage: https://github.com/polybar/polybar
 ## Picom
 
 Homepage: https://github.com/yshui/picom
+
+## Dunst
+
+Homepage: https://github.com/dunst-project/dunst

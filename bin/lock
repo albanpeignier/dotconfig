@@ -9,4 +9,4 @@ if [ -f "${IMAGE}" ]; then
   options="${options} -i ${IMAGE}"
 fi
 
-exec i3lock $options
+exec i3lock $options $@

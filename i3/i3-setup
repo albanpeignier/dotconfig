@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-PACKAGES="i3 picom playerctl feh variety adwaita-icon-theme polybar lxappearance"
+PACKAGES="i3 picom playerctl feh variety adwaita-icon-theme polybar lxappearance imagemagick"
 sudo apt install $PACKAGES
 
 I3_CONFIG="${HOME}/.dotconfig/i3/config-$(hostname)"
@@ -25,3 +25,5 @@ POLYBAR_CONFIG="${HOME}/.dotconfig/i3/polybar-$(hostname).ini"
 if [ -f ${POLYBAR_CONFIG} ]; then
   ln -fs ${POLYBAR_CONFIG} ~/.config/polybar/config.ini
 fi
+
+ln -fs ~/.dotconfig/i3/variety/variety.conf ~/.config/variety/variety.conf

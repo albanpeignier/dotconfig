@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+wallpaper=$1
+
+
+options=""
+
+if [ "$(hostname)" == "hyppo" ]; then
+  options="--no-xinerama"
+fi
+
+feh $options --no-fehbg --bg-fill "$wallpaper"
+convert "$wallpaper" ~/.config/variety/current.png

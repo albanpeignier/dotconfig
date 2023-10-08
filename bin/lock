@@ -1,0 +1,12 @@
+#!/bin/sh
+
+xset +dpms dpms 300 600 900
+
+options="-c 000000"
+
+IMAGE=~/.config/variety/current.png
+if [ -f "${IMAGE}" ]; then
+  options="${options} -i ${IMAGE}"
+fi
+
+exec i3lock $options

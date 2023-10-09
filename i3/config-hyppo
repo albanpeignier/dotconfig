@@ -17,8 +17,18 @@ set $ws5 "5: Monitor"
 set $ws6 "6: Meeting"
 set $ws7 "7: Chat"
 set $ws8 "8: Media"
-set $ws9 "9: Empty"
+set $ws9 "9: Record"
 set $ws10 "10"
+
+workspace $ws1 output $output_main
+workspace $ws2 output $output_main
+workspace $ws3 output $output_main
+workspace $ws4 output $output_main
+workspace $ws5 output $output_left
+workspace $ws6 output $output_left
+workspace $ws7 output $output_right
+workspace $ws8 output $output_right
+workspace $ws9 output $output_right
 
 font pango:Ubuntu Mono 11
 

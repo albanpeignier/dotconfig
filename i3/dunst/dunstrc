@@ -1,0 +1,27 @@
+[global]
+
+monitor=0
+follow=none
+
+width=500
+height=300
+
+origin=top-center
+offset=40x40
+
+notification_limit = 20
+font = Ubuntu Mono 12
+
+# background = "#25252c"
+background = "#036082"
+foreground = "#ffffff"
+
+frame_color = "#036082"
+frame_width = 0
+
+transparency = 15
+gap_size = 3
+
+corner_radius = 3
+padding = 20
+horizontal_padding = 20

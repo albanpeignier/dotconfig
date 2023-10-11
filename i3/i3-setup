@@ -27,3 +27,6 @@ if [ -f ${POLYBAR_CONFIG} ]; then
 fi
 
 ln -fs ~/.dotconfig/i3/variety/variety.conf ~/.config/variety/variety.conf
+
+mkdir -p ~/.config/dunst
+ln -fs ~/.dotconfig/i3/dunst/dunstrc ~/.config/dunst/dunstrc

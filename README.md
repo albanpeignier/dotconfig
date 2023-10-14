@@ -48,3 +48,7 @@ Homepage: https://github.com/yshui/picom
 ## Dunst
 
 Homepage: https://github.com/dunst-project/dunst
+
+## lsd
+
+Homepage: https://github.com/lsd-rs/lsd

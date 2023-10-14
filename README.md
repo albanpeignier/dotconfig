@@ -52,3 +52,7 @@ Homepage: https://github.com/dunst-project/dunst
 ## lsd
 
 Homepage: https://github.com/lsd-rs/lsd
+
+## Nerd Fonts
+
+Homepage: https://github.com/ryanoasis/nerd-fonts/

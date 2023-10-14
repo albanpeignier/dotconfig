@@ -1,0 +1,9 @@
+#!/bin/sh
+
+FONT_DIR=~/.local/share/fonts
+mkdir -p $FONT_DIR
+
+RELEASE=https://github.com/ryanoasis/nerd-fonts/releases/latest/download/NerdFontsSymbolsOnly.tar.xz
+curl -sLf ${RELEASE} | tar --extract -J --to-stdout SymbolsNerdFontMono-Regular.ttf > $FONT_DIR/SymbolsNerdFontMono-Regular.ttf
+
+fc-cache -vf

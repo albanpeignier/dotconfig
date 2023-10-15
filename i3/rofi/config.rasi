@@ -1,0 +1,10 @@
+configuration {
+  modi: [drun];
+  show-icons: true;
+  timeout {
+    delay:  15;
+    action: "kb-cancel";
+  }
+}
+
+@theme "theme"

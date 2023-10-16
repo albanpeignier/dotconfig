@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-PACKAGES="i3 picom playerctl feh variety adwaita-icon-theme polybar lxappearance imagemagick brightnessctl rofi"
+PACKAGES="i3 picom playerctl feh variety adwaita-icon-theme polybar lxappearance imagemagick brightnessctl rofi scrot"
 sudo apt install $PACKAGES
 
 I3_CONFIG="${HOME}/.dotconfig/i3/config-$(hostname)"

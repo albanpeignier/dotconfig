@@ -1,0 +1,39 @@
+#!/bin/sh -xe
+
+CACHE_DIR="$HOME/.cache/logseq/"
+mkdir -p $CACHE_DIR
+cd $CACHE_DIR
+
+URL='https://api.github.com/repos/logseq/logseq/releases/latest'
+VERSION=$(curl -s $URL | jq -r .tag_name)
+APP_IMAGE="Logseq-linux-x64-${VERSION}.AppImage"
+
+if [ ! -f "${APP_IMAGE}" ]; then
+  RELEASE="https://github.com/logseq/logseq/releases/download/${VERSION}/Logseq-linux-x64-${VERSION}.AppImage"
+
+  curl --progress-bar -Lf ${RELEASE} > ${APP_IMAGE}
+  chmod +x ${APP_IMAGE}
+fi
+
+DESKTOP_FILE=$HOME/.local/share/applications/logseq.desktop
+
+if [ ! -f ${DESKTOP_FILE} ]; then
+  cat > ${DESKTOP_FILE} <<EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=Logseq
+Comment=Logseq for Desktop
+Exec=$HOME/.dotconfig/bin/logseq %u
+Icon=$HOME/.dotconfig/logseq/logseq.png
+StartupWMClass=Logseq
+Type=Application
+Categories=Office;
+MimeType=x-scheme-handler/logseq
+Terminal=false
+EOF
+fi
+
+APP_IMAGE=`ls Logseq*.AppImage | tail -1`
+echo "Launch ${APP_IMAGE}"
+
+exec ./${APP_IMAGE} $@

@@ -1,0 +1,19 @@
+#!/bin/sh -e
+
+DISCORD_USE_PTB=false
+
+if [ -x /usr/bin/discord-ptb ]; then
+    DISCORD_USE_PTB=true
+fi
+
+download_url='https://discord.com/api/download?platform=linux&format=deb'
+
+if [ "${DISCORD_USE_PTB}" = "true" ]; then
+   download_url="https://discord.com/api/download/ptb?platform=linux&format=deb"
+fi
+
+deb_file=`mktemp discord-XXXXX.deb`
+trap "rm -rf ${deb_file}" EXIT
+
+curl -Lfs -o "${deb_file}" "${download_url}"
+sudo dpkg -i "${deb_file}"

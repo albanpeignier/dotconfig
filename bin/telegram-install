@@ -1,0 +1,12 @@
+#!/bin/sh -ex
+
+CACHE_DIR="$HOME/.cache/telegram/"
+
+if [ ! -d $CACHE_DIR ]; then
+    mkdir -p $CACHE_DIR
+    cd $CACHE_DIR
+
+    curl -Lsf https://telegram.org/dl/desktop/linux | tar -xJf - --strip-components=1
+fi
+
+$CACHE_DIR/Updater

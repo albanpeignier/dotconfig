@@ -1,6 +1,16 @@
 #!/bin/sh -e
 
-PACKAGES="screen kitty bat zsh curl jq htop btop fonts-powerline fonts-ubuntu fonts-font-awesome fonts-powerline lsd"
+ENABLE_GRAPHICS=false
+
+if dpkg -l | egrep -q "ii  (xwayland|xserver-xorg) "; then
+  ENABLE_GRAPHICS=true
+fi
+
+PACKAGES="screen bat zsh curl jq htop btop lsd"
+if [ "${ENABLE_GRAPHICS}" = "true" ]; then
+  PACKAGES="$PACKAGES kitty fonts-powerline fonts-ubuntu fonts-font-awesome fonts-powerline"
+fi
+
 sudo apt install $PACKAGES
 
 git submodule update --init
@@ -18,13 +28,16 @@ fi
 ln -fs ~/.dotconfig/git/config ~/.gitconfig
 # ln -fs ~/.dotconfig/ruby/irbrc ~/.irbrc
 
-mkdir -p ~/.config/kitty
-ln -fs ~/.dotconfig/kitty/kitty.conf ~/.config/kitty/kitty.conf
-ln -fs ~/.dotconfig/starship.toml ~/.config/starship.toml
+if [ "${ENABLE_GRAPHICS}" = "true" ]; then
+  mkdir -p ~/.config/kitty
+  ln -fs ~/.dotconfig/kitty/kitty.conf ~/.config/kitty/kitty.conf
 
-if [ ! -L ~/.doom.d ]; then
-  ln -fs ~/.dotconfig/doom-emacs ~/.doom.d
+  if [ ! -L ~/.doom.d ]; then
+    ln -fs ~/.dotconfig/doom-emacs ~/.doom.d
+  fi
 fi
+
+ln -fs ~/.dotconfig/starship.toml ~/.config/starship.toml
 
 PATH="./bin:$PATH"
 

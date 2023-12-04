@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -x
+
+directory=$PWD/`dirname $1`
+file=`basename $1`
+basename=`basename $1 .zip`
+
+docker run --rm -v $directory:/work ghcr.io/mobilitydata/gtfs-validator:latest -i /work/$file -o /work/$basename-report
+xdg-open $directory/$basename-report/report.html

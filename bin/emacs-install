@@ -1,0 +1,10 @@
+#!/bin/sh -x
+
+sudo apt install emacs-gtk ripgrep fd-find
+
+if [ ! -d ~/.emacs.d ]; then
+  git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+  ~/.emacs.d/bin/doom install
+fi
+
+ln -fs ~/.dotconfig/emacs/emacs.service ~/.config/systemd/user/emacs.service

@@ -80,3 +80,7 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Use cucumber command even if a Rakefile exists
+(after! feature-mode
+  (setq feature-rake-command "cucumber {options} \"{feature}\""))

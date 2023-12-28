@@ -1,11 +1,21 @@
 [user]
-        name = Alban Peignier
+  name = Alban Peignier
 [push]
-        default = current
+  default = current
 [color]
-        ui = true
+  ui = true
 [core]
-        excludesFile = ~/.dotconfig/git/ignore
-        hooksPath = ~/.dotconfig/git/hooks
+  excludesFile = ~/.dotconfig/git/ignore
+  hooksPath = ~/.dotconfig/git/hooks
 [fetch]
-	prune = true
+  prune = true
+
+# Define git difftool
+[diff]
+  tool = difftastic
+[difftool]
+  prompt = false
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+[pager]
+  difftool = true

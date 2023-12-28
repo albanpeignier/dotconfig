@@ -1,0 +1,6 @@
+
+#!/bin/sh -e
+
+RELEASE="https://github.com/Wilfred/difftastic/releases/latest/download/difft-x86_64-unknown-linux-gnu.tar.gz"
+curl -sLf ${RELEASE} | tar --extract -z --to-stdout difft > /tmp/difft
+local-install /tmp/difft

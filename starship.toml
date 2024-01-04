@@ -24,7 +24,7 @@ disabled = false
 disabled = true
 
 [ruby]
-disabled = true
+disabled = false
 
 [java]
 disabled = true

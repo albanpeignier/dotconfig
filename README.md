@@ -56,3 +56,15 @@ Homepage: https://github.com/lsd-rs/lsd
 ## Nerd Fonts
 
 Homepage: https://github.com/ryanoasis/nerd-fonts/
+
+## Difftastic
+
+Homepage: https://difftastic.wilfred.me.uk/
+
+## rbenv
+
+Homepage: https://github.com/rbenv/rbenv
+
+## Keychain 
+
+Homepage: https://www.funtoo.org/Funtoo:Keychain

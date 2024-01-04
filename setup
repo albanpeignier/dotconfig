@@ -44,3 +44,4 @@ PATH="./bin:$PATH"
 ./bin/dust-install
 ./bin/mcfly-install
 ./bin/starship-install
+./bin/difftastic-install

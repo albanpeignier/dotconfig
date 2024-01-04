@@ -69,7 +69,10 @@ ZSH_CUSTOM=~/.dotconfig/oh-my-zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git rails ruby gcloud gem golang history jira kubectl kubectx rake rbenv screen yarn bundler kube-ps1 copypath copyfile web-search pj debian zsh-lsd github microk8s)
+plugins=(git rails ruby gcloud gem golang history jira kubectl kubectx rake rbenv screen yarn bundler kube-ps1 copypath copyfile web-search pj debian zsh-lsd github microk8s keychain)
+
+zstyle :omz:plugins:keychain agents gpg,ssh
+zstyle :omz:plugins:keychain identities id_rsa github google_compute_engine
 
 source $ZSH/oh-my-zsh.sh
 

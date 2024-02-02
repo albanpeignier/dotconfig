@@ -84,3 +84,6 @@
 ;; Use cucumber command even if a Rakefile exists
 (after! feature-mode
   (setq feature-rake-command "cucumber {options} \"{feature}\""))
+
+(after! atomic-chrome
+  (atomic-chrome-start-server))

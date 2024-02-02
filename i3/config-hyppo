@@ -10,8 +10,8 @@ exec --no-startup-id ~/.dotconfig/i3/xrandr-hyppo.sh
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Code"
-set $ws2 "2: Write"
-set $ws3 "3: Perso"
+set $ws2 "2: Perso"
+set $ws3 "3: Write"
 set $ws4 "4: Games"
 set $ws5 "5: Monitor"
 set $ws6 "6: Meeting"

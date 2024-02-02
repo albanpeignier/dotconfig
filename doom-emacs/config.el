@@ -87,3 +87,11 @@
 
 (after! atomic-chrome
   (atomic-chrome-start-server))
+
+(after! csv-mode
+  (let* ((gtfs-files '("agency.txt" "stops.txt" "routes.txt" "trips.txt" "stop_times.txt" "calendar.txt" "calendar_dates.txt" "shapes.txt" "feed_info.txt"))
+         (gtfs-regexp (concat (regexp-opt gtfs-files t) "\\'")))
+    (add-to-list 'auto-mode-alist (cons gtfs-regexp 'csv-mode)))
+
+  (add-hook 'csv-mode-hook 'csv-align-mode)
+)

@@ -53,4 +53,6 @@ stow tmux
 if [ "${ENABLE_GRAPHICS}" = "true" ]; then
   stow gtk
   ./gtk/setup
+  
+  stow gedit
 fi

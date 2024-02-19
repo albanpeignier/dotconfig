@@ -7,3 +7,6 @@
 [submodule "gtk/.themes/dracula"]
 	path = gtk/.themes/dracula
 	url = https://github.com/dracula/gtk.git
+[submodule "gedit/.local/share/gedit/styles"]
+	path = gedit/.local/share/gedit/styles
+	url = https://github.com/dracula/gedit.git

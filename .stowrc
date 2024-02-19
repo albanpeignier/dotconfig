@@ -1,0 +1,5 @@
+--target=$HOME
+--dotfiles
+--verbose
+--ignore=setup
+

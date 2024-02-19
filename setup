@@ -47,4 +47,10 @@ PATH="./bin:$PATH"
 ./bin/difftastic-install
 
 cd `dirname $0`
-stow -t $HOME -v tmux
+
+stow tmux
+
+if [ "${ENABLE_GRAPHICS}" = "true" ]; then
+  stow gtk
+  ./gtk/setup
+fi

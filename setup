@@ -6,7 +6,7 @@ if dpkg -l | egrep -q "ii  (xwayland|xserver-xorg) "; then
   ENABLE_GRAPHICS=true
 fi
 
-PACKAGES="screen bat zsh curl jq htop btop lsd"
+PACKAGES="screen bat zsh curl jq htop btop lsd stow tmux"
 if [ "${ENABLE_GRAPHICS}" = "true" ]; then
   PACKAGES="$PACKAGES kitty fonts-powerline fonts-ubuntu fonts-font-awesome fonts-powerline"
 fi
@@ -45,3 +45,6 @@ PATH="./bin:$PATH"
 ./bin/mcfly-install
 ./bin/starship-install
 ./bin/difftastic-install
+
+cd `dirname $0`
+stow -t $HOME -v tmux

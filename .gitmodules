@@ -1,3 +1,6 @@
 [submodule "oh-my-zsh/custom/plugins/zsh-lsd"]
 	path = oh-my-zsh/custom/plugins/zsh-lsd
 	url = https://github.com/z-shell/zsh-lsd.git
+[submodule "tmux/.tmux/plugins/tpm"]
+	path = tmux/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

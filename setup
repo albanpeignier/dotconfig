@@ -29,9 +29,6 @@ ln -fs ~/.dotconfig/git/config ~/.gitconfig
 # ln -fs ~/.dotconfig/ruby/irbrc ~/.irbrc
 
 if [ "${ENABLE_GRAPHICS}" = "true" ]; then
-  mkdir -p ~/.config/kitty
-  ln -fs ~/.dotconfig/kitty/kitty.conf ~/.config/kitty/kitty.conf
-
   if [ ! -L ~/.doom.d ]; then
     ln -fs ~/.dotconfig/doom-emacs ~/.doom.d
   fi
@@ -48,9 +45,13 @@ PATH="./bin:$PATH"
 
 cd `dirname $0`
 
+./tmux/install
 stow tmux
 
 if [ "${ENABLE_GRAPHICS}" = "true" ]; then
+  ./kitty/install
+  stow kitty
+
   stow gtk
   ./gtk/setup
   

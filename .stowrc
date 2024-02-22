@@ -2,4 +2,4 @@
 --dotfiles
 --verbose
 --ignore=setup
-
+--ignore=install

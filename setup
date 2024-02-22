@@ -6,7 +6,7 @@ if dpkg -l | egrep -q "ii  (xwayland|xserver-xorg) "; then
   ENABLE_GRAPHICS=true
 fi
 
-PACKAGES="screen bat zsh curl jq htop btop lsd stow tmux"
+PACKAGES="screen bat zsh curl jq htop btop lsd stow"
 if [ "${ENABLE_GRAPHICS}" = "true" ]; then
   PACKAGES="$PACKAGES kitty fonts-powerline fonts-ubuntu fonts-font-awesome fonts-powerline"
 fi
@@ -47,6 +47,7 @@ cd `dirname $0`
 
 ./tmux/install
 stow tmux
+./tmux/setup
 
 if [ "${ENABLE_GRAPHICS}" = "true" ]; then
   ./kitty/install

@@ -72,7 +72,7 @@ ZSH_CUSTOM=~/.dotconfig/oh-my-zsh/custom
 plugins=(
   git rails ruby gcloud gem golang history jira kubectl kubectx rake rbenv screen
   yarn bundler kube-ps1 copypath copyfile web-search pj debian zsh-lsd github
-  microk8s rbenv keychain zsh-autosuggestions
+  microk8s rbenv keychain zsh-autosuggestions zsh-syntax-highlighting
 )
 
 zstyle :omz:plugins:keychain agents gpg,ssh

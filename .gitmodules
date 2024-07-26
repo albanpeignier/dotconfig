@@ -7,3 +7,6 @@
 [submodule "gedit/.local/share/gedit/styles"]
 	path = gedit/.local/share/gedit/styles
 	url = https://github.com/dracula/gedit.git
+[submodule "oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+	path = oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions

@@ -9,8 +9,8 @@
     font:   "Ubuntu Mono 13";
 
     white: #ffffff;
-    blue: #036082;
-    dark: #25252c;
+    blue: #6272a4;
+    dark: #282A36;
 
     background-color:   transparent;
     text-color:         @white;

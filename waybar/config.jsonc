@@ -1,0 +1,55 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "output": "DP-2",
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+        "hyprland/window",
+        "clock"
+    ],
+    "modules-right": [
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}: {icon}",
+        "format-icons": {
+            //         "1": "",
+            //         "2": "",
+            //         "3": "",
+            //         "4": "",
+            //         "5": "",
+            "urgent": "",
+            "active": "",
+            "default": ""
+        }
+    },
+    "clock": {
+        "format": "{0:%H:%M}  {0:%d %m %Y} ",
+        "format-alt": "{:%A, %d %B %Y (%R)} ",
+        // "timezone": "America/New_York",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+    },
+}

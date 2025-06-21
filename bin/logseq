@@ -33,7 +33,7 @@ Terminal=false
 EOF
 fi
 
-APP_IMAGE=`ls Logseq*.AppImage | tail -1`
+# APP_IMAGE=`ls Logseq*.AppImage | tail -1`
 echo "Launch ${APP_IMAGE}"
 
 exec ./${APP_IMAGE} $@
